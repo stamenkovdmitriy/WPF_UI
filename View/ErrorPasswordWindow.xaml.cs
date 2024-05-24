@@ -15,23 +15,18 @@ using System.Windows.Shapes;
 namespace WPF_UI.View
 {
     /// <summary>
-    /// Логика взаимодействия для MenuWindow.xaml
+    /// Логика взаимодействия для ErrorPasswordWindow.xaml
     /// </summary>
-    public partial class MenuWindow : Window
+    public partial class ErrorPasswordWindow : Window
     {
-        public MenuWindow()
+        public ErrorPasswordWindow()
         {
             InitializeComponent();
         }
 
-        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void btnPage2_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -135,20 +135,28 @@
                 </StackPanel>
 
                 <StackPanel
-                    Orientation="Horizontal" Margin="0,0,0,8">
+                    Margin="0,0,0,8" Orientation="Horizontal">
                     <TextBox
-                        Text="Password" TextAlignment="Right"
-                        FontSize="24" Foreground="White" Background="Transparent"
-                        Height="38" Width="140" Margin="8,8,8,8" BorderBrush="{x:Null}" >
+                        Text="Password"
+                        TextAlignment="Right"   TextWrapping="Wrap" FontSize="24" Background="Transparent"
+                        Height="38" Width="140" Margin="8,8,8,8" BorderBrush="{x:Null}" Foreground="White" >
                     </TextBox>
-                    <PasswordBox x:Name="txtPassword"
-                                 FontSize="24"
-                                 Height="38" Width="240" Margin="8,8,8,8" BorderBrush="{x:Null}" >
-                        <PasswordBox.Background>
-                            <SolidColorBrush Color="White" Opacity="0.4"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                    <Grid>
+                        <PasswordBox x:Name="txtPassword" PasswordChanged="TxtPassword_PasswordChanged"
+                                     FontSize="24"
+                                     Height="38" Width="240" Margin="8,8,8,8" BorderBrush="{x:Null}" >
+                            <PasswordBox.Background>
+                                <SolidColorBrush Color="White" Opacity="0.4"/>
+                            </PasswordBox.Background>
+                        </PasswordBox>
+                        <TextBlock x:Name="watermarkPassword"
+                                   Text="Enter Password" TextAlignment="Center"
+                                   FontSize="22" Foreground="#405254"
+                                   Height="32" Width="150" Margin="8,8,8,8"  >
+                        </TextBlock>
+                    </Grid>
                 </StackPanel>
+
 
                 <Button Style="{DynamicResource ButtonCornerRadius}" x:Name="btnLogin" Content="Login"
                         FontSize="20" FontFamily="Arial"

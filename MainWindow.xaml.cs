@@ -38,13 +38,13 @@ namespace WPF_UI
             string password = GetPassword(txtPassword);
             if (txtUserName.Text == "qqqq"&&password=="1111")
             {
-                MenuWindow window = new MenuWindow();
+                MenuWindow window = new ();
                 window.Show();
             }
             else
             {
-                string s = "OOOOOPSS!!!!";
-                MessageBox.Show(s);
+                ErrorPasswordWindow window = new();
+                window.Show();
             }
         }
         // метод для получения текста из PasswordBox
@@ -56,6 +56,11 @@ namespace WPF_UI
                 password += c;
             }
             return password;
+        }
+
+        private void TxtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            watermarkPassword.Visibility = txtPassword.Password.Length > 0 ? Visibility.Collapsed:Visibility.Visible ;
         }
     }
 }
